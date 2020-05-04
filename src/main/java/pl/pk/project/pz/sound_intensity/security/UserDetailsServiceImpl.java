@@ -25,14 +25,14 @@ public class UserDetailsServiceImpl implements UserDetailsService
 
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException
     {
-        pl.pk.project.pz.sound_intensity.dao.entity.User user  = userRepo.findByUsername(username);
+        pl.pk.project.pz.sound_intensity.dao.entity.User user  = userRepo.findByEmail(email);
         if (user == null)
         {
-            throw new UsernameNotFoundException(username);
+            throw new UsernameNotFoundException(email);
         }
-        return new User(user.getUsername(),user.getPassword(),emptyList());
+        return new User(user.getEmail(),user.getPassword(),emptyList());
     }
 
 
