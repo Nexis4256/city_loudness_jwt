@@ -32,13 +32,4 @@ public class UserController
     {
         userRepo.deleteAll();
     }
-
-    @GetMapping("users/{id}")
-    public User findUserById(@PathVariable long id)
-    {
-        return userRepo.findUserById(id);
-    }
-
-
-
 }
