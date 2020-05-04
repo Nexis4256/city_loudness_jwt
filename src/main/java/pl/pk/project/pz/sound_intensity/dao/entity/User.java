@@ -12,7 +12,7 @@ public class User
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
-    private String username;
+    private String email;
     private String password;
 
 
@@ -30,14 +30,14 @@ public class User
         this.id = id;
     }
 
-    public String getUsername()
+    public String getEmail()
     {
-        return username;
+        return email;
     }
 
-    public void setUsername(String email)
+    public void setEmail(String email)
     {
-        this.username = email;
+        this.email = email;
     }
 
     public String getPassword()

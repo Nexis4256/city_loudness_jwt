@@ -43,7 +43,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             pl.pk.project.pz.sound_intensity.dao.entity.User credentials= new ObjectMapper().readValue(request.getInputStream(),pl.pk.project.pz.sound_intensity.dao.entity.User.class);
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
-                            credentials.getUsername(),
+                            credentials.getEmail(),
                             credentials.getPassword(),
                             new ArrayList<>()
                             )
