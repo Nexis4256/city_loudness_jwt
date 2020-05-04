@@ -1,6 +1,7 @@
 package pl.pk.project.pz.sound_intensity.api;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +28,12 @@ public class UserController
     {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepo.save(user);
+    }
+
+    @DeleteMapping("users/all")
+    public void deleteAllUsers()
+    {
+        userRepo.deleteAll();
     }
 
 
