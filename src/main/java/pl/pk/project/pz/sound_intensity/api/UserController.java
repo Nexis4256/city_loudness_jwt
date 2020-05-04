@@ -1,10 +1,7 @@
 package pl.pk.project.pz.sound_intensity.api;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.pk.project.pz.sound_intensity.dao.UserRepo;
 import pl.pk.project.pz.sound_intensity.dao.entity.User;
 
@@ -35,6 +32,13 @@ public class UserController
     {
         userRepo.deleteAll();
     }
+
+    @GetMapping("users/{id}")
+    public User findUserById(@PathVariable long id)
+    {
+        return userRepo.findUserById(id);
+    }
+
 
 
 }

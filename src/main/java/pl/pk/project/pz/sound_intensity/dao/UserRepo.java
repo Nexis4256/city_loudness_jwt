@@ -9,4 +9,6 @@ import pl.pk.project.pz.sound_intensity.dao.entity.User;
 public interface UserRepo extends JpaRepository<User,Long>
 {
     User findByUsername(String username);
+    User findUserById(Long id);
+
 }
